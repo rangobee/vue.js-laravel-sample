@@ -16,7 +16,7 @@ import router from './routes';
 //         { path: '/', component: require('./components/Index.vue') },
 //     ]
 // })
-
+console.log(location.href);
 // 独自コンポーネントだけを記述した別ファイルを作成
 import './myComponents';
 

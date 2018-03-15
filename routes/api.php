@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+// use Illuminate\Support\Facades\Auth;
 
 /*
   |--------------------------------------------------------------------------
@@ -13,10 +14,21 @@ use Illuminate\Http\Request;
   |
  */
 
+Route::middleware('auth:api')->get('/logout', function (Request $request) {
+    // try{
+        \Auth::logout();
+        // $request->user()->token()->revoke();
+
+        // return $request->bearerToken();
+    // }catch(\Exception $e){
+    //     return $e->getMessage();
+    // }
+});
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/message', function(Request $request) {
+Route::middleware('auth:api')->post('/message', function(Request $request) {
     return 'Your input message is "' . $request['message'] . '".';
 });
