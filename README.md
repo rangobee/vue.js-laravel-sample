@@ -40,11 +40,16 @@ resources
 ```
 
 ## 作業
-**※ 事前に `Homestead` のインストールを済ませておいてください。**
+**※ 事前に `Composer` のインストールを済ませておいてください。**
 
 ```bash:console
 # プロジェクトのクローン
 git clone https://github.com/tosite0345/vue.js-laravel-sample.git
+
+# VM起動
+composer install
+./vendor/bin/homestead make
+vagrant up
 
 # 以下はvagrant上で行う
 vagrant ssh
